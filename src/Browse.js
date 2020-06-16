@@ -20,11 +20,9 @@ const Styles = styled.div`
     margin: 0px 10px 10px 10px;
     width: 400px;
     height: 70px;
-  }
-  .stream div {
-      display: flex;
-      justify-content: right;
-      align-items: center;
+    display: flex;
+    justify-content: right;
+    align-items: center;
   }
 
 `;
