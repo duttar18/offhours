@@ -41,19 +41,19 @@ const Browse = () => {
                     streamer : "Raul Dutta",
                     streamerImg : "./userImg/userimg1.png",
                     streamImg : "./streamImg/stream1.jpg",
-                    streamLink : "/watch/0",
+                    streamLink : "/watch?id=0",
                 },
                 {
                     streamer : "Daniel Zheng",
                     streamerImg : "./userImg/userimg2.jpg",
                     streamImg : "./streamImg/stream2.jpg",
-                    streamLink : "/watch/1",
+                    streamLink : "/watch?id=1",
                 },
                 {
                     streamer : "Jillian Lew",
                     streamerImg : "./userImg/userimg3.jpg",
                     streamImg : "./streamImg/stream3.jpg",
-                    streamLink : "/watch/3",
+                    streamLink : "/watch?id=2",
                 }
             ]
         },
@@ -64,8 +64,8 @@ const Browse = () => {
                     streamer : "Daniel Zheng",
                     streamerImg : "./userImg/userimg2.jpg",
                     streamImg : "./streamImg/stream4.jpg",
-                    streamLink : "/watch/2",
-                }
+                    streamLink : "/watch?id=3",
+                } 
             ]
         },
     ]

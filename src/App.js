@@ -19,8 +19,8 @@ const App = () => {
             <Switch>
               <Route exact path="/" component = {Browse} />
               <Route exact path="/browse" component = {Browse} />
-              <Route path="/watch/:id" component = {Watch} />
-              <Route path="/stream/:id" component = {Stream} />
+              <Route path="/watch?id=:id" component = {Watch} />
+              <Route path="/stream" component = {Stream} />
             </Switch>
           </Router>
         </Layout>
