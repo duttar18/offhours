@@ -26,9 +26,7 @@ const Watch = () => {
             muted
             onVideoPause={() => console.log(':(')}
           />
-          <TwitchChat channel="moonstar_x" theme="dark" parent={['localhost']} />
-          <TwitchClip clip="WealthyBumblingKimchiItsBoshyTime" parent={['localhost', 'mycoolsite.com']} />
-          <TwitchPlayer video="333014765" parent={['mycoolsite.com']} />
+          hi?
         </div>
       );
 }
