@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
+import Watch  from './Watch';
+import Browse  from './Browse';
+import { Stream } from './Stream';
+import { Layout } from './components/Layout';
+import { NavigationBar } from './components/Navbar';
+ 
+
+const App = () => {
+    return (
+      <div>
+        <NavigationBar/>
+        
+        <Layout>
+          <Router>
+            <Switch>
+              <Route exact path="/" component = {Browse} />
+              <Route exact path="/browse" component = {Browse} />
+              <Route path="/watch/:id" component = {Watch} />
+              <Route path="/stream/:id" component = {Stream} />
+            </Switch>
+          </Router>
+        </Layout>
+        </div>
+    )
+  }
 
 export default App;
