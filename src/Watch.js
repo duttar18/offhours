@@ -19,13 +19,9 @@ const Watch = () => {
     var streamId = this.props.match.params.id;
     return (
         <div>
-          <TwitchEmbed
-            channel="moonstar_x"
-            id="moonstar_x"
-            theme="dark"
-            muted
-            onVideoPause={() => console.log(':(')}
-          />
+          <TwitchChat channel="moonstar_x" theme="dark" parent={['offhours.herokuapp.com/watch']} />
+          <TwitchClip clip="WealthyBumblingKimchiItsBoshyTime" parent={['offhours.herokuapp.com/watch']} />
+          <TwitchPlayer video="333014765" parent={['offhours.herokuapp.com/watch']} />
           hi?
         </div>
       );
