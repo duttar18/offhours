@@ -25,7 +25,7 @@ const Styles = styled.div`
     align-items: center;
   }
 
-`;
+`; 
 
 const Browse = () => {
     let subjects = [];

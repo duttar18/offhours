@@ -1,7 +1,17 @@
 import React from 'react'
 
-export const Stream = () => (
-    <div>
-        <p>stream</p>
-    </div>
-)
+const Stream = (props) => {
+    //check jills api if were logged in
+    const logname = ""
+    
+    if(logname===""){
+        props.history.push('/login?reroute=stream');
+    }
+    return (
+        <div>
+            <p>stream</p>
+        </div>
+    )
+}
+
+export default Stream;

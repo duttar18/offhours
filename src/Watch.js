@@ -38,8 +38,7 @@ const Watch = () => {
     //api call using id
 
     let stream = {
-        channel : "TimTheTatman",
-        streamer : "Daniel Zheng",
+        streamer : "TimTheTatman",
         streamerImg : "./userImg/userimg2.jpg",
     }
 
@@ -47,7 +46,7 @@ const Watch = () => {
         <Styles>
             <div class = 'vid'>
             <TwitchEmbed
-                channel={stream['channel']}
+                channel={stream['streamer']}
                 withChat={false}
             />
             <div class='streamer'>

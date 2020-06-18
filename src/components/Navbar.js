@@ -16,17 +16,30 @@ const Styles = styled.div`
     }
 `;
 
-export const NavigationBar = () => (
-    <Styles>
-        <Navbar>
-            <Navbar.Brand href="/"><img src={require("../img/assets/logo1.png")} style={{height: "30px"}} alt='offhours logo'/>Offhours</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-            <Navbar.Collapse id="basic-nav">
-                <Nav className="ml-auto" style={{margin: 'auto'}}>
-                    <Nav.Item><Nav.Link href="/Browse">Browse</Nav.Link></Nav.Item>
-                    <Nav.Item><Nav.Link href="/Stream">Stream</Nav.Link></Nav.Item>
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
-    </Styles>
-)
+export const NavigationBar = () => {
+    // check jills api if were logged in
+    const logname = ""
+    return(
+        <Styles>
+            <Navbar>
+                <Navbar.Brand href="/"><img src={require("../img/assets/logo1.png")} style={{height: "30px"}} alt='offhours logo'/>Offhours</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+                <Navbar.Collapse id="basic-nav">
+                    <Nav className="ml-auto" >
+                        <Nav.Item><Nav.Link href="/browse">Browse</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/stream">Stream</Nav.Link></Nav.Item>
+                        <Nav.Item>
+                            {logname==="" ? 
+                            (<Nav.Link href="/login">Login</Nav.Link>) : 
+                            (<Nav.Link>Logout({logname})</Nav.Link>)}
+                        </Nav.Item>  
+                        
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+        </Styles>
+    );
+    
+} 
+
+export default NavigationBar;
