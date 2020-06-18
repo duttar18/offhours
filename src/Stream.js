@@ -22,8 +22,8 @@ const Stream = (props) => {
 
     //get request jill for list of subjects
     let subjects = {
-        1 : "AP Chemistry",
-        2 : "EECS 281"
+        12 : "AP Chemistry",
+        24 : "EECS 281"
     }
 
     let location = useLocation();    
@@ -37,10 +37,16 @@ const Stream = (props) => {
         subject=subjects[subject]
     }
 
+    const golive = () => {
+
+        
+        
+    }
 
 
     return (
         <Styles>
+            <p>After starting your stream on twitch, select a subject. After you go live, watch the questions roll in.</p>
             <Dropdown>
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     {subject}
@@ -52,8 +58,8 @@ const Stream = (props) => {
                     ))}
                 </Dropdown.Menu>
                 <br/>
-                <Button variant="primary" type="button" autofocus="true">
-                    Submit
+                <Button variant="primary" type="button" autofocus="true" onClick={golive}>
+                    Go Live
                 </Button>
             </Dropdown>
         </Styles>
