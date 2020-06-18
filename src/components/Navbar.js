@@ -1,6 +1,7 @@
 import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
+import { Button } from '@material-ui/core';
 
 const Styles = styled.div`
     .navbar {
@@ -15,14 +16,7 @@ const Styles = styled.div`
         }
     }
 `;
-const Button = styled.button `
-    font-family: sans-serif; 
-    font-size:1.4rem;
-    border: none;
-    border-radius: 5px; 
-    background: white;
-    padding: 2px;
-`;
+
 
 export const NavigationBar = () => {
     // check jills api if were logged in
@@ -34,9 +28,9 @@ export const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-nav">
                     <Nav className="ml-auto" >
-                        <Nav.Item><Nav.Link href="/browse">Browse</Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/stream">Stream</Nav.Link></Nav.Item>
-                        <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/browse"><Button>Browse</Button></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/stream"><Button>Stream</Button></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/about"><Button>About</Button></Nav.Link></Nav.Item>
                         <Nav.Item>
                             {logname==="" ? 
                             (<Nav.Link href="/login"><Button>Login</Button></Nav.Link>) : 
