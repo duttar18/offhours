@@ -36,6 +36,7 @@ export const NavigationBar = () => {
                     <Nav className="ml-auto" >
                         <Nav.Item><Nav.Link href="/browse">Browse</Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/stream">Stream</Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/about">About</Nav.Link></Nav.Item>
                         <Nav.Item>
                             {logname==="" ? 
                             (<Nav.Link href="/login"><Button>Login</Button></Nav.Link>) : 

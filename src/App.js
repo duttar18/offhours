@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Grid } from "@material-ui/core";
 
+import About from './About';
 import Watch  from './Watch';
 import Browse  from './Browse';
 import Stream from './Stream';
@@ -20,6 +21,7 @@ const App = () => {
             <Switch>
               <Route exact path="/" component = {Browse} />
               <Route exact path="/browse" component = {Browse} />
+              <Route path = "/about" component = {About} />
               <Route path="/watch" component = {Watch} />
               <Route path="/stream" component = {Stream} />
               <Route path="/login" component = {Login} />
