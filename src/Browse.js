@@ -10,7 +10,9 @@ const Styles = styled.div`
     grid-gap: 20px 20px;
     grid-template-columns: auto auto auto auto auto;
     justify-content: start;
-  }
+    font-weight: bold;
+    padding: 10px 10px 10px 10px; 
+ }
   .avatar {
       border-radius : 50%;
       width: 40px;
