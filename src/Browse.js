@@ -28,50 +28,49 @@ const Styles = styled.div`
 `; 
 
 const Browse = () => {
-    let subjects = [];
- 
+    let subjects = {};
+    
+    // call jills api
 
-    subjects = [
-        {
-            subject: "AP Chemistry",
-            streams: [
-                {
-                    streamer : "Raul Dutta",
-                    streamerImg : "./userImg/userimg1.png",
-                    streamImg : "./streamImg/stream1.jpg",
-                    streamLink : "/watch?id=0",
-                },
-                {
-                    streamer : "Daniel Zheng",
-                    streamerImg : "./userImg/userimg2.jpg",
-                    streamImg : "./streamImg/stream2.jpg",
-                    streamLink : "/watch?id=1",
-                },
-                {
-                    streamer : "Jillian Lew",
-                    streamerImg : "./userImg/userimg3.jpg",
-                    streamImg : "./streamImg/stream3.jpg",
-                    streamLink : "/watch?id=2",
-                }
-            ]
-        },
-        {
-            subject: "EECS 281",
-            streams: [
-                {
-                    streamer : "Daniel Zheng",
-                    streamerImg : "./userImg/userimg2.jpg",
-                    streamImg : "./streamImg/stream4.jpg",
-                    streamLink : "/watch?id=3",
-                } 
-            ]
-        },
-    ]
+    subjects = 
+    {
+        "subjects" : [
+            {
+                subject: "AP Chemistry",
+                streams: [
+                    {
+                        streamer : "Raul Dutta",
+                        streamerImg : "./userImg/userimg1.png",
+                        streamImg : "./streamImg/stream1.jpg",
+                        streamLink : "/watch?id=0",
+                    },
+                    {
+                        streamer : "Daniel Zheng",
+                        streamerImg : "./userImg/userimg2.jpg",
+                        streamImg : "./streamImg/stream2.jpg",
+                        streamLink : "/watch?id=1",
+                    }
+                ]
+            },
+            {
+                subject: "EECS 281",
+                streams: [
+                    {
+                        streamer : "Daniel Zheng",
+                        streamerImg : "./userImg/userimg2.jpg",
+                        streamImg : "./streamImg/stream4.jpg",
+                        streamLink : "/watch?id=3",
+                    } 
+                ]
+            },
+        ]
+
+    }
     
 
     return(
         <Styles>
-            {subjects.map((subject) => 
+            {subjects['subjects'].map((subject) => 
                 <div>
                     <h2>{subject['subject']}</h2>
                     <div class="subject">

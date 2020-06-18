@@ -5,26 +5,7 @@ import styled from 'styled-components';
 
 
 const Styles = styled.div`
-  .avatar {
-      border-radius : 50%;
-      width: 70px;
-      height: 70px;
-  }
-  .streamer {
-    margin: 0px 10px 10px 10px;
-    width: 400px;
-    height: 100px;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-  }
-  .streamer p {
-    margin-left: 10px;
-    font-size: 30px;
-  }
-  .vid {
-      margin: 30px 0px 0px 0px;
-  }
+  
 
 `;
 
@@ -40,10 +21,18 @@ const Login = (props) => {
 
     const submit = () => {
 
-        // check jills api to login
-        let api = false
+        
+        const send = {
+            "username": "duttar",
+            "password": "1234"
+        }
+        // post request jills api to login
+        const receive = {
+            "logname" : "duttar",
+            "loggedin" : false
+        }
 
-        if (!api){
+        if (!receive["loggedin"]){
             setInvalid(true)
             return
         }
@@ -67,7 +56,7 @@ const Login = (props) => {
             <Form>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control type="text" placeholder="Username" />
+                    <Form.Control type="text" placeholder="Username" autofocus="true" onKeyPress={keyPress} />
                     <Form.Text className="text-muted">
                     </Form.Text>
                 </Form.Group>
@@ -81,6 +70,7 @@ const Login = (props) => {
                     Submit
                 </Button>
             </Form>
+            <a href="https://www.twitch.tv/signup"><p>Sign Up (Through Twitch)</p></a>
         </Styles>
         
     )

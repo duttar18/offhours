@@ -18,7 +18,11 @@ const Styles = styled.div`
 
 export const NavigationBar = () => {
     // check jills api if were logged in
-    const logname = ""
+    const context = {
+        "logname" : "duttar",
+        "loggedin" : false
+    }
+
     return(
         <Styles>
             <Navbar>
@@ -29,9 +33,9 @@ export const NavigationBar = () => {
                         <Nav.Item><Nav.Link href="/browse">Browse</Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/stream">Stream</Nav.Link></Nav.Item>
                         <Nav.Item>
-                            {logname==="" ? 
-                            (<Nav.Link href="/login">Login</Nav.Link>) : 
-                            (<Nav.Link>Logout({logname})</Nav.Link>)}
+                            {context["loggedin"] ?
+                            (<Nav.Link>Logout({context["logname"]})</Nav.Link>):
+                            (<Nav.Link href="/login">Login</Nav.Link>)}
                         </Nav.Item>  
                         
                     </Nav>
