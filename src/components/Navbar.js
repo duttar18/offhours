@@ -15,6 +15,14 @@ const Styles = styled.div`
         }
     }
 `;
+const Button = styled.button `
+    font-family: sans-serif; 
+    font-size:1.4rem;
+    border: none;
+    border-radius: 5px; 
+    background: white;
+    padding: 2px;
+`;
 
 export const NavigationBar = () => {
     // check jills api if were logged in
@@ -30,7 +38,7 @@ export const NavigationBar = () => {
                         <Nav.Item><Nav.Link href="/stream">Stream</Nav.Link></Nav.Item>
                         <Nav.Item>
                             {logname==="" ? 
-                            (<Nav.Link href="/login">Login</Nav.Link>) : 
+                            (<Nav.Link href="/login"><Button>Login</Button></Nav.Link>) : 
                             (<Nav.Link>Logout({logname})</Nav.Link>)}
                         </Nav.Item>  
                         
