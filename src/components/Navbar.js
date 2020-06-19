@@ -32,13 +32,13 @@ export const NavigationBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-nav">
                     <Nav className="ml-auto" >
-                        <Nav.Item><Nav.Link href="/browse"><Button>Browse</Button></Nav.Link></Nav.Item>
+                        <Nav.Item><Nav.Link href="/browse"><Button color='white'>Browse</Button></Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/stream"><Button>Stream</Button></Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/about"><Button>About</Button></Nav.Link></Nav.Item>
                         <Nav.Item>
                             {context["loggedin"] ?
                             (<Nav.Link>Logout({context["logname"]})</Nav.Link>):
-                            (<Nav.Link href="/login">Login</Nav.Link>)}
+                            (<Nav.Link href="/login"><Button variant='contained' color='primary'>Login</Button></Nav.Link>)}
                         </Nav.Item>  
                         
                     </Nav>
