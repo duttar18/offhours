@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components';
-import { TwitchEmbed } from 'react-twitch-embed';
+import { TwitchEmbed, TwitchPlayer } from 'react-twitch-embed';
 import { useLocation } from "react-router-dom";
 var images = require.context('./img', true);
 
@@ -22,40 +22,39 @@ const Styles = styled.div`
     margin-left: 10px;
     font-size: 30px;
   }
-  .vid {
-      margin: 30px 0px 0px 0px;
-  }
-
 `;
 
 
 const Watch = () => {    
 
-    let location = useLocation();    
-    const query = new URLSearchParams(location.search);
-    const id = query.get('id')
-    
-    //api call using id
+  let location = useLocation();    
+  const query = new URLSearchParams(location.search);
+  const id = query.get('id')
+  
+  // get stream
+  let stream = {
+      streamer : "TimTheTatman",
+      streamerImg : "./userImg/userimg2.jpg",
+      isLive : false,
+      vidnum : 333014765,
+      streamid : 5
+  }
 
-    let stream = {
-        streamer : "TimTheTatman",
-        streamerImg : "./userImg/userimg2.jpg",
-    }
+  return (
+    <Styles>
+        { stream["isLive"]?(
+        <TwitchEmbed channel={stream['streamer']} withChat={false}/>
+        ):(
+          <TwitchPlayer video= {stream["vidnum"]} />
+        )}
+        <div class='streamer'>
+            <img class='avatar' src={images(stream['streamerImg'])} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
+            <p>{stream['streamer']}</p>
+        </div>
+    </Styles>
 
-    return (
-        <Styles>
-            <div class = 'vid'>
-            <TwitchEmbed
-                channel={stream['streamer']}
-                withChat={false}
-            />
-            <div class='streamer'>
-                <img class='avatar' src={images(stream['streamerImg'])} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
-                <p>{stream['streamer']}</p>
-            </div>
-            </div>
-        </Styles>
-      );
+      
+  );
 }
 
 export default Watch;
