@@ -31,13 +31,18 @@ const Watch = () => {
   const query = new URLSearchParams(location.search);
   const id = query.get('id')
   
-  // get stream
+  // get stream ; send stream id
+  // what is sent to backend
+  let send = {
+    "streamid" :5
+  }
+  // what is received from backend
   let stream = {
-      streamer : "TimTheTatman",
-      streamerImg : "./userImg/userimg2.jpg",
-      isLive : false,
-      vidnum : 333014765,
-      streamid : 5
+      "streamer" : "TimTheTatman",
+      "streamerImg" : "./userImg/userimg2.jpg",
+      "isLive" : false,
+      "vidnum" : 333014765,
+      "streamid" : 5
   }
 
   return (

@@ -32,47 +32,51 @@ const Styles = styled.div`
 const Browse = () => {
     let subjects = {};
     
-    // call jills api
-
+    // get; /subjects/info ; send nothing
     subjects = 
-    {
-        "AP Chemistry" : 
-            [
-                {
-                    streamer : "Raul Dutta",
-                    streamerImg : "./userImg/userimg1.png",
-                    streamImg : "./streamImg/stream1.jpg",
-                    streamLink : "/watch?id=0",
-                },
-                {
-                    streamer : "Daniel Zheng",
-                    streamerImg : "./userImg/userimg2.jpg",
-                    streamImg : "./streamImg/stream2.jpg",
-                    streamLink : "/watch?id=1",
-                }
-            ],
-        "EECS 281":
-            [
-                {
-                    streamer : "Jillian Leu",
-                    streamerImg : "./userImg/userimg3.jpg",
-                    streamImg : "./streamImg/stream4.jpg",
-                    streamLink : "/watch?id=3",
-                } 
-            ]
-
+    {   
+        1 : {
+                "subject" :  "AP Chemistry",
+                "streams" : 
+                    [
+                        {
+                            "streamer" : "Raul Dutta",
+                            "streamerImg" : "./userImg/userimg1.png",
+                            "streamImg" : "./streamImg/stream1.jpg",
+                            "streamId ": 1
+                        },
+                        {
+                            "streamer" : "Daniel Zheng",
+                            "streamerImg" : "./userImg/userimg2.jpg",
+                            "streamImg" : "./streamImg/stream2.jpg",
+                            "streamId" : 3
+                        }
+                    ]
+            },
+        2 : {
+                "subject" : "EECS 281",
+                "streams" : 
+                    [
+                        {
+                            "streamer" : "Jillian Leu",
+                            "streamerImg" : "./userImg/userimg3.jpg",
+                            "streamImg" : "./streamImg/stream4.jpg",
+                            "streamId" : 2
+                        } 
+                    ]
+        }
     }
     
 
     return(
         <Styles>
-            {Object.keys(subjects).map((subject,index)=>(
+            {Object.keys(subjects).map((subjectid,index)=>(
                 <div>
-                    <h2>{subject}</h2>
+                    <h2>{subjects[subjectid]["subject"]}</h2>
                     <div class="subject">
-                        {subjects[subject].map((stream)=>
+                        {subjects[subjectid]["streams"].map((stream)=>
                             <div class='stream'>
-                                <a href={stream['streamLink']}>
+                                <a href={"/watch?id="+stream['streamId']}>
                                     <img src={images(stream['streamImg'])} style={{height: "150px"}} alt='stream'/>
                                 </a>
                                 <div>

@@ -21,12 +21,11 @@ const Login = (props) => {
 
     const submit = () => {
 
-        
+        // post; /login ; send
         const send = {
             "username": "duttar",
             "password": "1234"
         }
-        // post request jills api to login
         const receive = {
             "logname" : "duttar",
             "loggedin" : false

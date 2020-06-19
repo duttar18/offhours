@@ -8,7 +8,7 @@ const Styles = styled.div`
 
 const Stream = (props) => {
 
-    //get request jills api if were logged in
+    // get; /login ; send nothing
     const context = {
         "logname" : "duttar",
         "loggedin" : true
@@ -21,7 +21,7 @@ const Stream = (props) => {
     const [live,setLive] = useState(false)
     const [liveWarning,setLiveWarning] = useState(false)
 
-    //get request jill for list of subjects
+    // get; /subjects ; send nothing
     let subjects = {
         12 : "AP Chemistry",
         24 : "EECS 281"
@@ -39,8 +39,18 @@ const Stream = (props) => {
     }
 
     const golive = () => {
-        let apilivecall = true
-        if (apilivecall){
+        
+        // push; /live ; send subject id ( checks if user is live on twitch; if so then creates streaming entry for loggedin user)
+        // what is sent
+        let send = {
+            "subjectid" : subjects[subject]
+        }
+        // what is received
+        let apilivecall = {
+            "livecall" : false
+        }
+        
+        if (apilivecall["livecall"]){
             setLive(true);
         }
         else{

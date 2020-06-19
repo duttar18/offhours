@@ -19,7 +19,7 @@ const Styles = styled.div`
 
 
 export const NavigationBar = () => {
-    // check jills api if were logged in
+    // get; /subjects ; send nothing
     const context = {
         "logname" : "duttar",
         "loggedin" : false
