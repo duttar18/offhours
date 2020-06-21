@@ -20,7 +20,7 @@ const App = () => {
           <Router>
             <Switch>
               <Route exact path="/" component = {Browse} />
-              <Route exact path="/browse" component = {Browse} />
+              <Route path="/browse" component = {Browse} />
               <Route path = "/about" component = {About} />
               <Route path="/watch" component = {Watch} />
               <Route path="/stream" component = {Stream} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react'
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
@@ -19,11 +19,16 @@ const Styles = styled.div`
 
 
 export const NavigationBar = () => {
+    const [username,setUsername] = useState("");
+    const [loggedin,setLoggedin] = useState(false);
     // get; /subjects ; send nothing
-    const context = {
-        "logname" : "duttar",
-        "loggedin" : false
-    }
+    fetch('https://off-hours-backend.herokuapp.com/login')
+        .then(response => response.json())
+        .then(data => {
+            setUsername(data.username);
+            setLoggedin(data.loggedin);
+    });
+
 
     return(
         <Styles>
@@ -36,8 +41,8 @@ export const NavigationBar = () => {
                         <Nav.Item><Nav.Link href="/stream"><Button>Stream</Button></Nav.Link></Nav.Item>
                         <Nav.Item><Nav.Link href="/about"><Button>About</Button></Nav.Link></Nav.Item>
                         <Nav.Item>
-                            {context["loggedin"] ?
-                            (<Nav.Link>Logout({context["logname"]})</Nav.Link>):
+                            {loggedin ?
+                            (<Nav.Link>Logout({username})</Nav.Link>):
                             (<Nav.Link href="/login"><Button variant='contained' color='primary'>Login</Button></Nav.Link>)}
                         </Nav.Item>  
                         

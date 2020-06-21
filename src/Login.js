@@ -13,64 +13,51 @@ const Styles = styled.div`
 
 const Login = (props) => {
 
+    const [url,setUrl] = useState("");
+
     let location = useLocation();    
     const query = new URLSearchParams(location.search);
-    let reroute = query.get('reroute')
+    let failed = (<div></div>)
 
-    const [invalid,setInvalid] = useState(false)
+    if(query.has('code')){
+        const requestOptions = {
+            method: 'POST',
+            
+            
+        };
+        fetch('https://off-hours-backend.herokuapp.com/login?code='+query.get('code'), requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Got here")
+                if(data.loggedin){
+                    failed =(<p>succesfully logged in!</p>)
+                }
+                else{
+                    failed =(<p>failed login</p>)
+                }
+        });
+            
+    }
+
+    
 
     const submit = () => {
-
-        // post; /login ; send
-        const send = {
-            "username": "duttar",
-            "password": "1234"
-        }
-        const receive = {
-            "logname" : "duttar",
-            "loggedin" : false
-        }
-
-        if (!receive["loggedin"]){
-            setInvalid(true)
-            return
-        }
-        if (reroute){
-            reroute='/'+reroute
-            props.history.push({reroute});
-        }
-        else{
-            props.history.push('/browse');
-        }
-        
+        let clientid = "hgzp49atoti7g7fzd9v4pkego3i7ae";
+        let redirecturi = "https://offhours.herokuapp.com/login/";
+        let scope = "user_read";
+        setUrl('https://id.twitch.tv/oauth2/authorize?client_id='+clientid+'&redirect_uri='+redirecturi+'&response_type=code&scope='+scope);
     }
-    
-    const keyPress=(k)=>{
-        if (k.key === 'Enter'){
-          submit()
-        }
-    }
+
+
+
     return(
-        <Styles>
-            <Form>
-                <Form.Group controlId="formBasicEmail">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control type="text" placeholder="Username" autofocus="true" onKeyPress={keyPress} />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                </Form.Group>
-                <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" onKeyPress={keyPress}/>
-                </Form.Group>
-                {invalid?(<p style={{color: "red"}}>Username/Password incorrect</p>):<p></p>}
                 
-                <Button variant="primary" type="button" onClick={submit}>
-                    Submit
+            <Styles>
+                <Button href={url} variant="primary" type="button" onClick={submit}>
+                    Login Through Twitch
                 </Button>
-            </Form>
-            <a href="https://www.twitch.tv/signup"><p>Sign Up (Through Twitch)</p></a>
-        </Styles>
+                {failed}
+            </Styles>
         
     )
 }

@@ -41,14 +41,10 @@ const Browse = () => {
                     [
                         {
                             "streamer" : "Raul Dutta",
-                            "streamerImg" : "./userImg/userimg1.png",
-                            "streamImg" : "./streamImg/stream1.jpg",
                             "streamId ": 1
                         },
                         {
                             "streamer" : "Daniel Zheng",
-                            "streamerImg" : "./userImg/userimg2.jpg",
-                            "streamImg" : "./streamImg/stream2.jpg",
                             "streamId" : 3
                         }
                     ]
@@ -59,8 +55,6 @@ const Browse = () => {
                     [
                         {
                             "streamer" : "Jillian Leu",
-                            "streamerImg" : "./userImg/userimg3.jpg",
-                            "streamImg" : "./streamImg/stream4.jpg",
                             "streamId" : 2
                         } 
                     ]
@@ -77,10 +71,10 @@ const Browse = () => {
                         {subjects[subjectid]["streams"].map((stream)=>
                             <div class='stream'>
                                 <a href={"/watch?id="+stream['streamId']}>
-                                    <img src={images(stream['streamImg'])} style={{height: "150px"}} alt='stream'/>
+                                    <img src={images("./streamImg/stream.jpg")} style={{height: "150px"}} alt='stream'/>
                                 </a>
                                 <div>
-                                    <img class='avatar' src={images(stream['streamerImg'])} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
+                                    <img class='avatar' src={images("./userImg/user.jpg")} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
                                     <p>{stream['streamer']}</p>
                                 </div>
 
