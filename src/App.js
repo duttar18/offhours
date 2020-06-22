@@ -10,7 +10,7 @@ import Login from './Login';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/Navbar';
 
-
+//<NavigationBar/>
 const App = () => {
     return (
       <div>

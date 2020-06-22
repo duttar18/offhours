@@ -21,11 +21,9 @@ const Login = (props) => {
 
     if(query.has('code')){
         const requestOptions = {
-            'method': 'POST',
-            'Access-Control-Allow-Origin': "https://offhours.herokuapp.com/login/"
-            
+            'method': 'POST'
         };
-        fetch('https://off-hours-backend.herokuapp.com/login/?code='+query.get('code'), requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login, requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log("Got here")
