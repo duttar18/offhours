@@ -21,18 +21,18 @@ const Login = (props) => {
 
     if(query.has('code')){
         const requestOptions = {
-            method: 'POST',
-            
+            'method': 'POST',
+            'Access-Control-Allow-Origin': "https://off-hours-backend.herokuapp.com"s
             
         };
         fetch('https://off-hours-backend.herokuapp.com/login?code='+query.get('code'), requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log("Got here")
-                if(data.loggedin){
+                if(data.loggedin) {
                     failed =(<p>succesfully logged in!</p>)
                 }
-                else{
+                else {
                     failed =(<p>failed login</p>)
                 }
         });
