@@ -15,7 +15,7 @@ const App = () => {
     return (
       <div>
         <Grid container direction="column"> 
-        <NavigationBar/>
+        
         <Layout>
           <Router>
             <Switch>
