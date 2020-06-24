@@ -23,7 +23,7 @@ const Login = (props) => {
         const requestOptions = {
             'method': 'POST'
         };
-        fetch('https://off-hours-backend.herokuapp.com/login', requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login/?code='+query.get('code'), requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log("Got here")
