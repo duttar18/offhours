@@ -58,7 +58,7 @@ const Browse = () => {
                 "streams" : 
                     [
                         {
-                            "streamer" : "Jillian Leu",
+                            "streamer" : "Jillian Lew",
                             "streamerImg" : "./userImg/userimg3.jpg",
                             "streamImg" : "./streamImg/stream4.jpg",
                             "streamId" : 2

@@ -16,6 +16,7 @@ const App = () => {
       <div>
         <Grid container direction="column"> 
         <NavigationBar/>
+
         <Layout>
           <Router>
             <Switch>
@@ -25,7 +26,7 @@ const App = () => {
               <Route path="/watch" component = {Watch} />
               <Route path="/stream" component = {Stream} />
               <Route path="/login" component = {Login} />
-            </Switch>
+            </Switch>6
           </Router>
         </Layout>
         </Grid>
