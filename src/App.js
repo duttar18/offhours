@@ -10,18 +10,17 @@ import Login from './Login';
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/Navbar';
 
-
+//<NavigationBar/>
 const App = () => {
     return (
       <div>
         <Grid container direction="column"> 
         <NavigationBar/>
-
         <Layout>
           <Router>
             <Switch>
               <Route exact path="/" component = {Browse} />
-              <Route exact path="/browse" component = {Browse} />
+              <Route path="/browse" component = {Browse} />
               <Route path = "/about" component = {About} />
               <Route path="/watch" component = {Watch} />
               <Route path="/stream" component = {Stream} />

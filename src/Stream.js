@@ -10,12 +10,12 @@ const Stream = (props) => {
 
     // get; /login ; send nothing
     const context = {
-        "logname" : "duttar",
+        "username" : "duttar",
         "loggedin" : true
     }
 
     if(!context["loggedin"]){
-        props.history.push('/login?reroute=stream');
+        props.history.push('/login');
     }
 
     const [live,setLive] = useState(false)

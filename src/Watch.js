@@ -39,7 +39,6 @@ const Watch = () => {
   // what is received from backend
   let stream = {
       "streamer" : "TimTheTatman",
-      "streamerImg" : "./userImg/userimg2.jpg",
       "isLive" : false,
       "vidnum" : 333014765,
       "streamid" : 5
@@ -53,7 +52,7 @@ const Watch = () => {
           <TwitchPlayer video= {stream["vidnum"]} />
         )}
         <div class='streamer'>
-            <img class='avatar' src={images(stream['streamerImg'])} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
+            <img class='avatar' src={images("./userImg/user.jpg")} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
             <p>{stream['streamer']}</p>
         </div>
     </Styles>
