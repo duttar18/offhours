@@ -14,11 +14,10 @@ const Styles = styled.div`
 const Login = (props) => {
 
     const [url,setUrl] = useState("");
+    const [failed,setFailed] = (<div></div>);
 
     let location = useLocation();    
     const query = new URLSearchParams(location.search);
-    let failed = (<div></div>)
-
     if(query.has('code')){
         const requestOptions = {
             'method': 'POST'
