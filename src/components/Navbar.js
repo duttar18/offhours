@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
@@ -22,12 +22,16 @@ export const NavigationBar = () => {
     const [username,setUsername] = useState("");
     const [loggedin,setLoggedin] = useState(false);
     // get; /subjects ; send nothing
-    fetch('https://off-hours-backend.herokuapp.com/login')
+
+    useEffect(()=>{
+        fetch('https://off-hours-backend.herokuapp.com/login')
         .then(response => response.json())
         .then(data => {
             setUsername(data.username);
             setLoggedin(data.loggedin);
     });
+    });
+    
 
     const logout = () => {
         fetch('https://off-hours-backend.herokuapp.com/logout')
