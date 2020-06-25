@@ -30,10 +30,10 @@ const Login = (props) => {
             .then(data => {
                 console.log(data)
                 if(data.loggedin) {
-                    setFailed(<p>succesfully logged in!</p>)
+                    props.history.push('/browse');
                 }
                 else {
-                    setFailed(<p>failed login</p>)
+                    props.history.push('/login');
                 }
             });
             

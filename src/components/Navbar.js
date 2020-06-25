@@ -29,6 +29,13 @@ export const NavigationBar = () => {
             setLoggedin(data.loggedin);
     });
 
+    const logout = () => {
+        fetch('https://off-hours-backend.herokuapp.com/logout')
+            .then(response => response.json())
+            .then(data => {
+                window.location.reload();
+        });
+    }
 
     return(
         <Styles>
@@ -42,7 +49,7 @@ export const NavigationBar = () => {
                         <Nav.Item><Nav.Link href="/about"><Button>About</Button></Nav.Link></Nav.Item>
                         <Nav.Item>
                             {loggedin ?
-                            (<Nav.Link>Logout({username})</Nav.Link>):
+                            (<Nav.Link><Button variant='contained' color='primary' onClick={logout}>Logout({username})</Button></Nav.Link>):
                             (<Nav.Link href="/login"><Button variant='contained' color='primary'>Login</Button></Nav.Link>)}
                         </Nav.Item>  
                     </Nav>
