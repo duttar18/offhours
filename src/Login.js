@@ -19,6 +19,10 @@ const Login = (props) => {
 
     let location = useLocation();    
     const query = new URLSearchParams(location.search);
+
+    
+    console.log("got he")
+    console.log(document.location.hash)
     if(document.location.hash && document.location.hash!==''){
         const requestOptions = {
             'method': 'POST',
@@ -27,9 +31,12 @@ const Login = (props) => {
                 "token": document.location.hash
             }
         };
+        console.log("goz here")
         fetch('https://off-hours-backend.herokuapp.com/login', requestOptions)
             .then(response => response.json())
             .then(data => {
+                console.log("got here")
+                console.log(data)
                 if(data.loggedin) {
                     setFailed(<p>succesfully logged in!</p>)
                 }
