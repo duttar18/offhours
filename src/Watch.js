@@ -29,31 +29,30 @@ const Watch = () => {
 
   let location = useLocation();    
   const query = new URLSearchParams(location.search);
-  const id = query.get('id')
+  const username = query.get('username')
+  const [live,setLive] = useState(true)
+  const [name,setName] = useState('')
   
   // get stream ; send stream id
   // what is sent to backend
-  let send = {
-    "streamid" :5
-  }
-  // what is received from backend
-  let stream = {
-      "streamer" : "TimTheTatman",
-      "isLive" : false,
-      "vidnum" : 333014765,
-      "streamid" : 5
-  }
+  
+  fetch('https://off-hours-backend.herokuapp.com/stream?username='+username)
+  .then(response => response.json())
+  .then(data => {
+      setLive(data.isLive)
+      setName(data.name)
+  });
 
+// <TwitchPlayer video= {stream["vidnum"]} />
   return (
     <Styles>
-        { stream["isLive"]?(
-        <TwitchEmbed channel={stream['streamer']} withChat={false}/>
+        {live?(
+        <TwitchEmbed channel={username} withChat={false}/>
         ):(
-          <TwitchPlayer video= {stream["vidnum"]} />
+          <p>is not live</p>
         )}
         <div class='streamer'>
-            <img class='avatar' src={images("./userImg/user.jpg")} style={{margin: "0px 0px 0px 10px"}} alt='avatar'/>
-            <p>{stream['streamer']}</p>
+            <p>{name}</p>
         </div>
     </Styles>
 
