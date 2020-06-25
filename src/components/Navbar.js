@@ -22,7 +22,7 @@ export const NavigationBar = () => {
     const [username,setUsername] = useState("");
     const [loggedin,setLoggedin] = useState(false);
     // get; /subjects ; send nothing
-    fetch('https://off-hours-backend.herokuapp.com/login/')
+    fetch('https://off-hours-backend.herokuapp.com/login')
         .then(response => response.json())
         .then(data => {
             setUsername(data.username);
