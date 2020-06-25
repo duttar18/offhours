@@ -22,13 +22,13 @@ const Login = (props) => {
 
     
     console.log("got he")
-    console.log(document.location.hash)
-    if(document.location.hash && document.location.hash!==''){
+    console.log(location.hash)
+    if(location.hash && location.hash!==''){
         const requestOptions = {
             'method': 'POST',
             headers: {'Content-Type':'application/json'},
             body: {
-                "token": document.location.hash
+                "token": location.hash
             }
         };
         console.log("goz here")
