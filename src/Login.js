@@ -21,8 +21,6 @@ const Login = (props) => {
     const query = new URLSearchParams(location.search);
 
     
-    console.log("got he")
-    console.log(location.hash)
     if(location.hash && location.hash!==''){
         const requestOptions = {
             'method': 'POST',
@@ -31,11 +29,9 @@ const Login = (props) => {
                 "token": location.hash
             }
         };
-        console.log("goz here")
         fetch('https://off-hours-backend.herokuapp.com/login', requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log("got here")
                 console.log(data)
                 if(data.loggedin) {
                     setFailed(<p>succesfully logged in!</p>)
@@ -53,7 +49,7 @@ const Login = (props) => {
         let clientid = "hgzp49atoti7g7fzd9v4pkego3i7ae";
         let redirecturi = "https://offhours.herokuapp.com/login/";
         let scope = "user_read";
-        setUrl('https://id.twitch.tv/oauth2/authorize?client_id='+clientid+'&redirect_uri='+redirecturi+'&response_type=toekn&scope='+scope);
+        setUrl('https://id.twitch.tv/oauth2/authorize?client_id='+clientid+'&redirect_uri='+redirecturi+'&response_type=token&scope='+scope);
     }
 
 
