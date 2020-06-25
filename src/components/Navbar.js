@@ -45,7 +45,6 @@ export const NavigationBar = () => {
                             (<Nav.Link>Logout({username})</Nav.Link>):
                             (<Nav.Link href="/login"><Button variant='contained' color='primary'>Login</Button></Nav.Link>)}
                         </Nav.Item>  
-                        
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
