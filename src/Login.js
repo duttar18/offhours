@@ -14,7 +14,7 @@ const Styles = styled.div`
 const Login = (props) => {
 
     const [url,setUrl] = useState("");
-    const [failed,setFailed] = (<div></div>);
+    const [failed,setFailed] = useState(<div></div>);
 
     fetch('https://off-hours-backend.herokuapp.com/login')
         .then(response => response.json())
