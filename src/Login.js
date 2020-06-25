@@ -16,6 +16,17 @@ const Login = (props) => {
     const [url,setUrl] = useState("");
     const [failed,setFailed] = (<div></div>);
 
+    fetch('https://off-hours-backend.herokuapp.com/login')
+        .then(response => response.json())
+        .then(data => {
+            if(data.loggedin) {
+                failed =(<p>succesfully logged in!</p>)
+            }
+            else {
+                failed =(<p>failed login</p>)
+            }
+    });
+
     let location = useLocation();    
     const query = new URLSearchParams(location.search);
     if(query.has('code')){
@@ -25,13 +36,7 @@ const Login = (props) => {
         fetch('https://off-hours-backend.herokuapp.com/login?code='+query.get('code'), requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log("Got here")
-                if(data.loggedin) {
-                    failed =(<p>succesfully logged in!</p>)
-                }
-                else {
-                    failed =(<p>failed login</p>)
-                }
+                window.location.reload();
         });
             
     }
