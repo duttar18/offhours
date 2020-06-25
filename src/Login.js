@@ -39,7 +39,10 @@ const Login = (props) => {
                 else {
                     setFailed(<p>failed login</p>)
                 }
-        });
+            })
+            .catch(
+                setFailed(<p>server error</p>)
+            );
             
     }
 
