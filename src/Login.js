@@ -23,13 +23,9 @@ const Login = (props) => {
     
     if(location.hash && location.hash!==''){
         const requestOptions = {
-            'method': 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: {
-                "token": location.hash
-            }
+            'method': 'POST'
         };
-        fetch('https://off-hours-backend.herokuapp.com/login', requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login?token=location.hash', requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
