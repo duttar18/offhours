@@ -47,7 +47,7 @@ const Watch = () => {
   return (
     <Styles>
         {live?(
-        <TwitchEmbed channel={username} withChat={false}/>
+        <TwitchEmbed channel={username} withChat={true}/>
         ):(
           <p>is not live</p>
         )}
