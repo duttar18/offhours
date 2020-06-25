@@ -19,11 +19,15 @@ const Login = (props) => {
 
     let location = useLocation();    
     const query = new URLSearchParams(location.search);
-    if(query.has('code')){
+    if(document.location.hash && document.location.hash!==''){
         const requestOptions = {
-            'method': 'POST'
+            'method': 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: {
+                "token": document.location.hash
+            }
         };
-        fetch('https://off-hours-backend.herokuapp.com/login?code='+query.get('code'), requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login', requestOptions)
             .then(response => response.json())
             .then(data => {
                 if(data.loggedin) {
@@ -42,7 +46,7 @@ const Login = (props) => {
         let clientid = "hgzp49atoti7g7fzd9v4pkego3i7ae";
         let redirecturi = "https://offhours.herokuapp.com/login/";
         let scope = "user_read";
-        setUrl('https://id.twitch.tv/oauth2/authorize?client_id='+clientid+'&redirect_uri='+redirecturi+'&response_type=code&scope='+scope);
+        setUrl('https://id.twitch.tv/oauth2/authorize?client_id='+clientid+'&redirect_uri='+redirecturi+'&response_type=toekn&scope='+scope);
     }
 
 
