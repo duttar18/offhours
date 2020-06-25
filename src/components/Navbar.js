@@ -29,6 +29,8 @@ export const NavigationBar = () => {
         .then(data => {
             setUsername(data.username);
             setLoggedin(data.loggedin);
+            console.log(data.loggedin);
+            console.log("got here")
     });
     });
     
