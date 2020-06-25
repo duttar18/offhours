@@ -20,10 +20,10 @@ const Login = (props) => {
         .then(response => response.json())
         .then(data => {
             if(data.loggedin) {
-                failed =(<p>succesfully logged in!</p>)
+                setFailed(<p>succesfully logged in!</p>)
             }
             else {
-                failed =(<p>failed login</p>)
+                setFailed(<p>failed login</p>)
             }
     });
 
