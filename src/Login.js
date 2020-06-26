@@ -29,12 +29,8 @@ const Login = (props) => {
         fetch('https://off-hours-backend.herokuapp.com/login?token='+token, requestOptions)
             .then(response => response.json())
             .then(data => {
-                if(data.loggedin) {
-                    props.history.push('/browse');
-                }
-                else {
-                    props.history.push('/login');
-                }
+                console.log(data.loggedin)
+                console.log(data.username)
             });
             
     }
