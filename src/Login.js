@@ -25,7 +25,7 @@ const Login = (props) => {
         const requestOptions = {
             'method': 'POST'
         };
-        fetch('https://off-hours-backend.herokuapp.com/login?token='+query.get('tags'), requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login?token='+query.get('access_token'), requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
