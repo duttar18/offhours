@@ -30,7 +30,6 @@ export const NavigationBar = () => {
             setUsername(data.username);
             setLoggedin(data.loggedin);
             console.log(data.loggedin);
-            console.log("got here")
     });
     });
     

@@ -17,18 +17,19 @@ const Login = (props) => {
     const [failed,setFailed] = useState(<div></div>);
 
 
-    let location = useLocation();    
-    const query = new URLSearchParams(location.search);
+    const queryString = require('query-string');
+    var parsed = queryString.parse(window.location.search);
+    var token = parsed.access_token
+    console.log(token); // replace param with your own 
 
     
-    if(location.hash && location.hash!==''){
+    if(token && token!==''){
         const requestOptions = {
             'method': 'POST'
         };
-        fetch('https://off-hours-backend.herokuapp.com/login?token='+query.get('access_token'), requestOptions)
+        fetch('https://off-hours-backend.herokuapp.com/login?token='+token, requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 if(data.loggedin) {
                     props.history.push('/browse');
                 }
