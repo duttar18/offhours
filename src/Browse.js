@@ -29,7 +29,7 @@ const Styles = styled.div`
 
 `; 
 
-const Browse = () => {
+const Browse = (props) => {
     const [streamers,setStreamers] = useState([])
     fetch('https://off-hours-backend.herokuapp.com/all')
     .then(response => response.json())

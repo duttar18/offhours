@@ -18,7 +18,8 @@ const Login = (props) => {
 
 
     const queryString = require('query-string');
-    var parsed = queryString.parse(props.location.search);
+    console.log(props.location.hash);
+    var parsed = queryString.parse(props.location.hash);
     var token = parsed.access_token
     console.log(token); // replace param with your own 
 
