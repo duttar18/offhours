@@ -27,10 +27,13 @@ export const NavigationBar = () => {
         fetch('https://off-hours-backend.herokuapp.com/login')
         .then(response => response.json())
         .then(data => {
-            setUsername(data.username);
-            setLoggedin(data.loggedin);
-            console.log(data.test)
+            setUsername(Window.username);
+            setLoggedin(Window.loggedin);
+            console.log(Window.test)
+            console.log(Window.loggedin);
+            console.log(data.username)
             console.log(data.loggedin);
+
     });
     });
     
