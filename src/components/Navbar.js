@@ -29,10 +29,8 @@ export const NavigationBar = () => {
         .then(data => {
             setUsername(Window.username);
             setLoggedin(Window.loggedin);
-            console.log(Window.test)
+            console.log(Window.username)
             console.log(Window.loggedin);
-            console.log(data.username)
-            console.log(data.loggedin);
 
     });
     });
