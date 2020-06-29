@@ -25,10 +25,8 @@ export const NavigationBar = () => {
     setUsername(window.username);
     setLoggedin(window.loggedin);
     console.log(window.username)
-    console.log(window.loggedin);
-    // const requestOptions = {
-    //     'method': 'GET'
-    // };
+    console.log(windpw.loggedin);
+
 
     // useEffect(()=>{
     //     fetch('https://off-hours-backend.herokuapp.com/login',requestOptions)
@@ -40,7 +38,7 @@ export const NavigationBar = () => {
     //         console.log(data.loggedin);
 
     // });
-    });
+    };
     
 
     const logout = () => {
