@@ -7,10 +7,8 @@ const Styles = styled.div`
     .navbar {
         background-color: #30D5C8;
     }
-
     .navbar-brand, .navbar-nav .nav-link {
         color white;
-
         &:hover {
             color: #ddd;
         }
@@ -22,23 +20,16 @@ export const NavigationBar = () => {
     const [username,setUsername] = useState("");
     const [loggedin,setLoggedin] = useState(false);
     // get; /subjects ; send nothing
-    setUsername(window.username);
-    setLoggedin(window.loggedin);
-    console.log(window.username)
-    console.log(window.loggedin);
 
-
-    // useEffect(()=>{
-    //     fetch('https://off-hours-backend.herokuapp.com/login',requestOptions)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         setUsername(data.username);
-    //         setLoggedin(data.loggedin);
-    //         console.log(data.username)
-    //         console.log(data.loggedin);
-
-    // });
-    //};
+    useEffect(()=>{
+        fetch('https://off-hours-backend.herokuapp.com/login')
+        .then(response => response.json())
+        .then(data => {
+            setUsername(data.username);
+            setLoggedin(data.loggedin);
+            console.log(data.loggedin);
+    });
+    });
     
 
     const logout = () => {
