@@ -5,6 +5,9 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import CardHeader from '@material-ui/core/CardHeader';
+import { Avatar, IconButton, CardMedia } from '@material-ui/core';
+import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles({
     root: {
@@ -23,26 +26,28 @@ const useStyles = makeStyles({
     },
   });
 
-const UserCard = () => {
+const UserCard = (props) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
-
+    const { avatarSrc, title, subheader, description, imgSrc } = props;
     return (
         <Card className={classes.root}>
+      <CardHeader
+        avatar={
+            <Avatar src="avatarSrc" />
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MailIcon />
+          </IconButton>
+        }
+        title={title}
+        subheader={subheader}
+      />
+      <CardMedia style={{height: "400px" }} image={imgSrc}/>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-         Team Member
-        </Typography>
-        <Typography variant="h5" component="h2">
-          Age: 20
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          Computer Science Major
-        </Typography>
         <Typography variant="body2" component="p">
-          Has experience doing...
-          <br />
-          {'"Project A, B, C"'}
+            {description}
         </Typography>
       </CardContent>
       <CardActions>
