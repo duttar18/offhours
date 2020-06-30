@@ -6,7 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import CardHeader from '@material-ui/core/CardHeader';
-import { Avatar, IconButton, CardMedia } from '@material-ui/core';
+import { IconButton, CardMedia } from '@material-ui/core';
 import MailIcon from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles({
@@ -29,13 +29,10 @@ const useStyles = makeStyles({
 const UserCard = (props) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
-    const { avatarSrc, title, subheader, description, imgSrc } = props;
+    const { title, subheader, description, imgSrc } = props;
     return (
         <Card className={classes.root}>
       <CardHeader
-        avatar={
-            <Avatar src="avatarSrc" />
-        }
         action={
           <IconButton aria-label="settings">
             <MailIcon />
