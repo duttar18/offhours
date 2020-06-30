@@ -25,7 +25,7 @@ export const NavigationBar = () => {
     setUsername(window.username);
     setLoggedin(window.loggedin);
     console.log(window.username)
-    console.log(windpw.loggedin);
+    console.log(window.loggedin);
 
 
     // useEffect(()=>{
@@ -38,7 +38,7 @@ export const NavigationBar = () => {
     //         console.log(data.loggedin);
 
     // });
-    };
+    //};
     
 
     const logout = () => {
