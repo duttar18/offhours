@@ -31,8 +31,6 @@ const Login = (props) => {
             .then(data => {
                 console.log(data.loggedin)
                 console.log(data.username)
-                window.username = data.username
-                window.loggedin = data.loggedin
             });
             
     }
