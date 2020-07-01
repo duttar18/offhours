@@ -97,12 +97,7 @@ export const NavigationBar = () => {
                                 </Nav.Link>
                             )}
                         </Nav.Item>
-                        <Nav.Item>
-                            <Avatar
-                                alt="Daniel Zheng"
-                                src="https://i.postimg.cc/0yjRWZ8y/userimg2.jpg"
-                            />
-                        </Nav.Item>
+                     
                         <Nav.Item>
                             <SimpleMenu></SimpleMenu>
                         </Nav.Item>
