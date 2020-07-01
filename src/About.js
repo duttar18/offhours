@@ -14,10 +14,12 @@ const About = () => {
         <Grid continer direct="column">
             <img
                 src={require("./img/assets/aboutimg.jpg")}
-                style={({ width: "100%" })}
+                style={{ width: "100%" }}
                 alt="people"
             />
-            <Typography classname={classes.titleStyle} variant="h2">
+            <Typography
+                classname={classes.titleStyle}
+                variant="h2">
                 About Us
             </Typography>
             <Typography variant="p">
