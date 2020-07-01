@@ -9,6 +9,9 @@ const Styles = styled.div`
         background-color: white;
         border-color: gray;
         border-bottom: 0.5px solid;
+        position: fixed;
+        top: 0;
+        width: 100%;
     }
     .navbar-brand, .navbar-nav .nav-link {
         color white;
@@ -101,9 +104,7 @@ export const NavigationBar = () => {
                             />
                         </Nav.Item>
                         <Nav.Item>
-                            <SimpleMenu>
-
-                            </SimpleMenu>
+                            <SimpleMenu></SimpleMenu>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

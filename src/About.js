@@ -4,7 +4,7 @@ import { Typography, makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     titleStyle: {
-        color: "red"
+        color: "blue"
     }
 }));
 
