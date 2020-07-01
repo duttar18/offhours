@@ -17,9 +17,9 @@ const About = () => {
                 style={{ width: "100%" }}
                 alt="people"
             />
-            <Typography
-                classname={classes.titleStyle}
-                variant="h2">
+            <hr></hr>
+
+            <Typography classname={classes.titleStyle} variant="h2">
                 About Us
             </Typography>
             <Typography variant="p">

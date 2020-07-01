@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import styled from "styled-components";
-import { Button } from "@material-ui/core";
+import { Button, Avatar } from "@material-ui/core";
 
 const Styles = styled.div`
     .navbar {
@@ -92,6 +92,12 @@ export const NavigationBar = () => {
                                     </Button>
                                 </Nav.Link>
                             )}
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Avatar
+                                alt="Daniel Zheng"
+                                src="https://i.postimg.cc/0yjRWZ8y/userimg2.jpg" 
+                            />
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
