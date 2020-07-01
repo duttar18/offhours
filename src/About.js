@@ -2,10 +2,10 @@ import React from "react";
 import Content from "./Content";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
     titleStyle: {
-        color: "blue"
-    }
+        color: "black",
+    },
 }));
 
 const About = () => {
