@@ -11,6 +11,7 @@ const Content = () => {
                     subheader="Age 20"
                     imgSrc="https://i.postimg.cc/8kWVsLVX/DSC09838-ARW.jpg"
                     description="20 year old ladies man"
+                    weburl="https://thewayofthewanderer.com"
                 />
             </Grid>
             <Grid item xs={12} sm={4}>

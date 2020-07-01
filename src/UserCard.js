@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 const UserCard = (props) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
-    const { title, subheader, description, imgSrc } = props;
+    const { title, subheader, description, imgSrc, weburl } = props;
     return (
         <Card className={classes.root}>
             <CardHeader
@@ -48,7 +48,11 @@ const UserCard = (props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small">Website</Button>
+                <Button size="small">
+                    <a className={classes.link} target="_blank" href={weburl}>
+                        Website
+                    </a>
+                </Button>
             </CardActions>
         </Card>
     );
