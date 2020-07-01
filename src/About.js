@@ -2,11 +2,11 @@ import React from "react";
 import Content from "./Content";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     titleStyle: {
-        color: "red",
-    },
-});
+        color: "red"
+    }
+}));
 
 const About = () => {
     const classes = useStyles();
@@ -18,8 +18,7 @@ const About = () => {
                 alt="people"
             />
             <hr></hr>
-
-            <Typography classname={classes.titleStyle} variant="h2">
+            <Typography className={classes.titleStyle} variant="h2">
                 About Us
             </Typography>
             <Typography variant="p">

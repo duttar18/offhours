@@ -7,6 +7,7 @@ import Watch from "./Watch";
 import Browse from "./Browse";
 import Stream from "./Stream";
 import Login from "./Login";
+import Profile from "./Profile";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/Navbar";
 
@@ -25,6 +26,7 @@ const App = () => {
                             <Route path="/watch" component={Watch} />
                             <Route path="/stream" component={Stream} />
                             <Route path="/login" component={Login} />
+                            <Route path="/profile" component={Profile} />
                         </Switch>
                     </Router>
                 </Layout>
