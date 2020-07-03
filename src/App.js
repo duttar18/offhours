@@ -10,6 +10,7 @@ import Login from "./Login";
 import Profile from "./Profile";
 import { Layout } from "./components/Layout";
 import { NavigationBar } from "./components/Navbar";
+import PersistentDrawerLeft from "./PersistentDrawerLeft";
 
 //
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <div>
             <Grid container direction="column">
                 <NavigationBar />
+                <PersistentDrawerLeft />
                 <Layout>
                     <Router>
                         <Switch>
