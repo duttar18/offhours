@@ -104,17 +104,14 @@ export default function PersistentDrawerLeft() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-
-            <Toolbar>
-                <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={handleDrawerOpen}
-                    edge="start"
-                    className={clsx(classes.menuButton, open && classes.hide)}>
-                    <MenuIcon />
-                </IconButton>
-            </Toolbar>
+            <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, open && classes.hide)}>
+                <MenuIcon />
+            </IconButton>
             <Drawer
                 className={classes.drawer}
                 variant="persistent"

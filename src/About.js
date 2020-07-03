@@ -3,6 +3,10 @@ import Content from "./Content";
 import { Typography, makeStyles, Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        marginTop: "-50px",
+        marginLeft: "50px",
+    },
     titleStyle: {
         color: "black",
     },
@@ -11,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
 const About = () => {
     const classes = useStyles();
     return (
-        <Grid continer direct="column">
+        <Grid className={classes.root}>
             <img
                 src={require("./img/assets/aboutimg.jpg")}
                 style={{ width: "100%" }}
