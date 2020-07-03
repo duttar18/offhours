@@ -79,6 +79,13 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginLeft: 0,
     },
+    text: {
+        paddingLeft: "20px",
+        paddingTop: "10px",
+        paddingBottom: "10px",
+        backgroundColor: "black",
+        color: "white",
+    },
 }));
 
 export default function PersistentDrawerLeft() {
@@ -126,7 +133,9 @@ export default function PersistentDrawerLeft() {
                     </IconButton>
                 </div>
                 <Divider />
-                <Typography variant="h6">Online</Typography>
+                <Typography variant="h6" className={classes.text}>
+                    Online
+                </Typography>
                 <List>
                     {[
                         "Daniel Zheng",
