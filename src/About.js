@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     titleStyle: {
         color: "black",
     },
+    paragraphStyle: {
+
+    },
 }));
 
 const About = () => {
@@ -25,7 +28,7 @@ const About = () => {
             <Typography className={classes.titleStyle} variant="h2">
                 About Us
             </Typography>
-            <Typography variant="p">
+            <Typography className={classes.paragraphStyle} variant="p">
                 OffHours is a next generational education platform that provides
                 on demand office hours and discussions streamed straight to your
                 personal device. Students can browse and join classes and chat

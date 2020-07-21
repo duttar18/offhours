@@ -14,7 +14,6 @@ export default function SimpleMenu() {
     const handleClose = () => {
         setAnchorEl(null);
     };
-
     return (
         <div>
             <Avatar

@@ -14,10 +14,14 @@ const Styles = styled.div`
         width: 100%;
     }
     .navbar-brand, .navbar-nav .nav-link {
-        color white;
+        color: white;
         &:hover {
             color: #ddd;
         }
+    }
+    #profile { 
+        margin: 10px;
+        background-color: red;
     }
 `;
 
@@ -97,9 +101,9 @@ export const NavigationBar = () => {
                                 </Nav.Link>
                             )}
                         </Nav.Item>
-                     
+
                         <Nav.Item>
-                            <SimpleMenu></SimpleMenu>
+                            <SimpleMenu id="profile"></SimpleMenu>
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
